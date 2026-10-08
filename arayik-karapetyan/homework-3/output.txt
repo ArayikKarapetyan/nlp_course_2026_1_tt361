@@ -1,0 +1,80 @@
+Loaded 3846 tweets from Coachella-2015-2-DFE.csv
+Saved cleaned dataset to coachella_cleaned.csv
+
+1. Hashtags
+Tweets with at least one hashtag: 3840
+Total hashtags: 5489 (838 unique)
+Top 10 hashtags (case-insensitive):
+  #coachella2015            3828
+  #coachella                288
+  #coachellalineup          66
+  #drake                    40
+  #acdc                     34
+  #music                    28
+  #jackwhite                24
+  #lineup                   20
+  #steelydan                17
+  #coachellatickets         15
+
+2. Emails
+Tweets with at least one email: 0
+(The dataset contains no email addresses, so the column is empty.)
+Check on a sample sentence: 'Write to example@gmail.com or user@yahoo.com, not @coachella.'
+  -> ['example@gmail.com', 'user@yahoo.com']
+
+3. Cleaning steps applied to one tweet
+  original                    'Philly\x89Ûªs @warondrugsjams will play #Coachella2015 &amp; #GovBall2015! Watch them on Jimmy Fallon: http://t.co/wzaAE5wYNT http://t.co/sFL9I5sD20'
+  decode_html_entities        'Philly\x89Ûªs @warondrugsjams will play #Coachella2015 & #GovBall2015! Watch them on Jimmy Fallon: http://t.co/wzaAE5wYNT http://t.co/sFL9I5sD20'
+  remove_usernames            'Philly\x89Ûªs   will play #Coachella2015 & #GovBall2015! Watch them on Jimmy Fallon: http://t.co/wzaAE5wYNT http://t.co/sFL9I5sD20'
+  remove_links                'Philly\x89Ûªs   will play #Coachella2015 & #GovBall2015! Watch them on Jimmy Fallon:    '
+  remove_non_ascii_symbols    'Philly s   will play #Coachella2015 & #GovBall2015! Watch them on Jimmy Fallon:    '
+  to_lower                    'philly s   will play #coachella2015 & #govball2015! watch them on jimmy fallon:    '
+  remove_stop_words           'philly play #coachella2015 & #govball2015! watch jimmy fallon:'
+  remove_digits               'philly play #coachella  & #govball ! watch jimmy fallon:'
+  remove_special_characters   'philly play coachella govball watch jimmy fallon'
+
+4. Before / after examples
+[0] text:       '#Coachella2015 tickets selling out in less than 40 minutes _Ù_¦_Ù___Ù___Ù÷\x9d_ÙÎµ_ÙÎµ_Ù___Ù_¦ http://t.co/SmoXyteIMJ'
+     hashtags:   ['#Coachella2015']
+     clean_text: 'coachella tickets selling less minutes'
+
+[1] text:       'RT @sudsybuddy: WAIT THIS IS ABSOLUTE FIRE _ÙÓ´_ÙÓ´_ÙÓ´ #Coachella2015 http://t.co/Ov2eCJtAvR'
+     hashtags:   ['#Coachella2015']
+     clean_text: 'wait absolute fire coachella'
+
+[2] text:       '#Coachella2015 #VIP passes secured! See you there bitchesssss'
+     hashtags:   ['#Coachella2015', '#VIP']
+     clean_text: 'coachella vip passes secured see bitchesssss'
+
+[4] text:       'If briana and her mom out to #Coachella2015  im out with them !!! _Ù÷Ý_Ù÷Ý_Ù÷Ý_ÙÕÄ'
+     hashtags:   ['#Coachella2015']
+     clean_text: 'briana mom coachella'
+
+[6] text:       "Coachella tickets are now sold out _Ù÷_ &amp; I had the opportunity to have bought them. I'm definitely going next year #Coachella2015 #Coachella"
+     hashtags:   ['#Coachella2015', '#Coachella']
+     clean_text: 'coachella tickets sold opportunity bought definitely going next year coachella coachella'
+
+[10] text:       "RT @RogerCraigSmith: Dig these guys much! Can't wait to see them at #Coachella2015!\nTwo dudes creating incredible sounds.\n@royalblooduk \nht\x89Û_"
+     hashtags:   ['#Coachella2015']
+     clean_text: 'dig guys much wait see coachella two dudes creating incredible sounds ht'
+
+[25] text:       'Young DroCHELLA | #Coachella #Coachella2015 http://t.co/X0tIMlrjSH'
+     hashtags:   ['#Coachella', '#Coachella2015']
+     clean_text: 'young drochella coachella coachella'
+
+[100] text:       'https://t.co/dot8qgvwDp @zayngos_mangos !!!! #Coachella2015 is calling our names!'
+     hashtags:   ['#Coachella2015']
+     clean_text: 'coachella calling names'
+
+First rows of the new columns:
+                                          hashtags emails                                                                                clean_text
+0                                 [#Coachella2015]     []                                                    coachella tickets selling less minutes
+1                                 [#Coachella2015]     []                                                              wait absolute fire coachella
+2                           [#Coachella2015, #VIP]     []                                              coachella vip passes secured see bitchesssss
+3                   [#Coachella2015, #GovBall2015]     []                                          philly play coachella govball watch jimmy fallon
+4                                 [#Coachella2015]     []                                                                      briana mom coachella
+5                   [#west, #coas, #Coachella2015]     []                                                   west side best side west coas coachella
+6                     [#Coachella2015, #Coachella]     []  coachella tickets sold opportunity bought definitely going next year coachella coachella
+7                                 [#Coachella2015]     []                   coachella absolutely wait weekend exceed epic expectations lineup crazy
+8  [#truth, #desprate, #Coachella2015, #Coachella]     []                      someone got coachella friend life truth desprate coachella coachella
+9                                 [#Coachella2015]     []                          coachella coachella makes space rockers ravers year coachella oh
