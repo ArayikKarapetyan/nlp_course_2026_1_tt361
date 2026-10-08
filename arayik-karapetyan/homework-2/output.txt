@@ -1,0 +1,47 @@
+Problem 1: Extract Email Addresses
+support@example.com
+sales@company.org
+john.doe123@university.edu
+
+Problem 2: Validate Phone Numbers
+Valid phone numbers:
+123-456-7890
+987-654-3210
+
+Problem 3: Extract Dates
+25/12/2023
+01-01-2024
+31/05/2023
+15-10-2024
+
+Problem 4: Find Repeated Words
+Repeated words:
+the the
+the the
+
+Problem 5: Extract Hashtags
+#Sale2024
+#NewArrival
+#Discounts
+
+Problem 6: Validate Password Strength
+Valid passwords:
+Password123
+Secure456
+
+Problem 7: Extract URLs
+https://www.example.com
+http://blog.example.org
+
+Problem 8: Replace Multiple Spaces with a Single Space
+This text has multiple spaces.
+
+Problem 9: Extract Quoted Text
+Hello, world!
+Hi there!
+
+Problem 10: Validate IP Addresses
+Valid IP addresses:
+192.168.1.1
+10.0.0.255
+
